@@ -15,7 +15,7 @@ void odom_Callback(const nav_msgs::OdometryConstPtr& msg)
 
     pictogram.pose.position.x = msg->pose.pose.position.x;
     pictogram.pose.position.y = msg->pose.pose.position.y;
-    pictogram.pose.position.z = 1.5;
+    pictogram.pose.position.z = 2.0;
     pictogram.pose.orientation.x = 0.7;
     pictogram.pose.orientation.y = 0;
     pictogram.pose.orientation.z = 0.7;
@@ -24,7 +24,7 @@ void odom_Callback(const nav_msgs::OdometryConstPtr& msg)
     pictogram.action = pictogram.ROTATE_X;
     pictogram.mode   = pictogram.PICTOGRAM_MODE;
     pictogram.character = "fa-wifi";
-    pictogram.size = 1;
+    pictogram.size = 2;
     pictogram.speed = 2.0;
     pictogram.color.r = 25/255.0;
     pictogram.color.g = 255/255.0;
