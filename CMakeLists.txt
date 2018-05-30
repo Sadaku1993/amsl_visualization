@@ -154,7 +154,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/amsl_visualization_node.cpp)
 add_executable(odom_pictogram src/odom_pictogram.cpp)
-
+add_executable(linear_plotter src/linear_plotter.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -170,6 +170,11 @@ add_executable(odom_pictogram src/odom_pictogram.cpp)
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(odom_pictogram
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+target_link_libraries(linear_plotter
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
   ${PCL_LIBRARIES}

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="amsl_visualization" type="odom_pictogram" name="odom_pictogram" />
+	<node pkg="amsl_visualization" type="linear_plotter" name="linear_plotter" />
+
+</launch>

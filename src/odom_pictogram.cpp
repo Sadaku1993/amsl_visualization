@@ -25,7 +25,7 @@ void odom_Callback(const nav_msgs::OdometryConstPtr& msg)
     pictogram.mode   = pictogram.PICTOGRAM_MODE;
     pictogram.character = "fa-wifi";
     pictogram.size = 2;
-    pictogram.speed = 2.0;
+    pictogram.speed = 1.0;
     pictogram.color.r = 25/255.0;
     pictogram.color.g = 255/255.0;
     pictogram.color.b = 240/255.0;
@@ -38,12 +38,16 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "odom_pictogram");
     ros::NodeHandle n;
     
-    ros::Rate rate(20);
+    ros::Rate rate(10);
 
     ros::Subscriber sub = n.subscribe("/odom", 1, odom_Callback);
     pub = n.advertise<jsk_rviz_plugins::Pictogram>("/odom/pictogram", 1);
 
-    ros::spin();
+	while(ros::ok())
+	{
+		ros::spinOnce();
+		rate.sleep();
+	}
 
     return 0;
 }
